@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.ts',
-    devtool: 'eval',
+    
+    devtool: 'eval-source-map',
     devServer: {
         contentBase: './dist'
     },
