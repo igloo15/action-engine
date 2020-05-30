@@ -1,0 +1,7 @@
+dist/
+docs/
+changelog.json
+Contributing.md
+GitVersionConfig.yaml
+tsconfig.json
+tslint.json

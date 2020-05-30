@@ -1,0 +1,77 @@
+{
+  "name": "@igloo15/action-engine",
+  "oldVersion": "0.2.0-dev.7",
+  "version": "0.2.0-dev.8",
+  "description": "Action Engine is synchronous action loop that can be hooked on to",
+  "main": "dist/lib/index.js",
+  "scripts": {
+    "update:version:all": "npm-run-all update:version:pkg update:version:file",
+    "update:version:pkg": "node ./config/update-version.js",
+    "update:version:file": "node ./config/update-version-file.js",
+    "clean": "rimraf dist",
+    "lint": "eslint src/**",
+    "test": "npm-run-all test:*",
+    "test:lint": "npm run lint",
+    "test:formatting": "prettier --write src/**/*.{json,ts,tsx,js,jsx,yaml,yml}",
+    "fix:formatting": "prettier --check src/**/*.{json,ts,tsx,js,jsx,yaml,yml}",
+    "git:tag": "cross-var git tag v$npm_package_version",
+    "serve": "webpack-dev-server --open",
+    "docs": "typedoc --theme markdown --readme docs/README.md --out docs/api src",
+    "pack": "npm pack",
+    "build": "npm run build:webpack",
+    "build:webpack": "webpack",
+    "build:production": "webpack --config ./webpack.config.prod.js",
+    "build:all": "npm-run-all clean test build:production update:version:all",
+    "deploy:test": "npm run build:all && npm pack --dry-run",
+    "deploy": "npm run build:all && npm run git:tag && npm publish --access=public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igloo15/action-engine.git"
+  },
+  "homepage": "https://github.com/igloo15/action-engine#readme",
+  "bugs": {
+    "url": "https://github.com/igloo15/action-engine/issues"
+  },
+  "author": {
+    "name": "igloo15"
+  },
+  "files": [
+    "/dist",
+    "package.json"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/d3-timer": "^1.0.9",
+    "@typescript-eslint/eslint-plugin": "^3.0.2",
+    "@typescript-eslint/parser": "^3.0.2",
+    "cross-var": "^1.1.0",
+    "css-loader": "^3.5.3",
+    "edit-json-file": "^1.4.0",
+    "eslint": "^7.1.0",
+    "eslint-loader": "^4.0.2",
+    "git-describe": "^4.0.4",
+    "glob": "^7.1.6",
+    "html-webpack-plugin": "^4.3.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
+    "replace-in-file": "^6.0.0",
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.7",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^3.0.2",
+    "ts-loader": "^7.0.5",
+    "typedoc": "^0.17.7",
+    "typedoc-plugin-markdown": "^2.2.17",
+    "typescript": "^3.9.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "@igloo15/action-engine@0.2.0-dev.7",
+  "date": "Thu Mar 12 2020",
+  "dependencies": {
+  }
+}
