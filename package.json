@@ -1,9 +1,9 @@
 {
   "name": "@igloo15/action-engine",
   "oldVersion": "0.2.0-dev.7",
-  "version": "0.3.0-dev.3",
+  "version": "0.3.0-dev.5",
   "description": "Action Engine is synchronous action loop that can be hooked on to",
-  "main": "dist/lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "update:version:all": "npm-run-all update:version:pkg update:version:file",
     "update:version:pkg": "node ./config/update-version.js",
