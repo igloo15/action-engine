@@ -12,7 +12,7 @@ module.exports = {
     output: {
         filename: 'index.js',
         path: path.resolve(__dirname, 'dist/lib'),
-        library: 'basic-typescript-lib',
+        library: 'action-engine',
         libraryTarget: 'umd'
     },
     optimization: {

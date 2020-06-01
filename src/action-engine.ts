@@ -74,20 +74,18 @@ export class ActionEngine<T> {
             this._lastTime = performance.now();
             this._preciseElapsed = this._lastTime - this._start;
             this._normalElapsed += this._interval;
-
             for (const tempAction of this._normalActions) {
                 if (this._normalElapsed % tempAction.interval === 0) {
                     tempAction.action(this._context, this._normalElapsed, this._frame);
                 }
             }
-
             for (const precAction of this._preciseActions) {
                 if (this._preciseElapsed % precAction.interval < precAction.validRange) {
                     precAction.action(this._context, this._preciseElapsed, this._frame);
                 }
             }
-
-            requestAnimationFrame(() => {
+            if (this._normalAnimationActions.length > 0 || this._preciseAnimationActions.length > 0) {
+              requestAnimationFrame(() => {
                 for (const tempAction of this._normalAnimationActions) {
                     if (this._normalElapsed % tempAction.interval === 0) {
                         tempAction.action(this._context, this._normalElapsed, this._frame);
@@ -99,7 +97,8 @@ export class ActionEngine<T> {
                         precAction.action(this._context, this._preciseElapsed, this._frame);
                     }
                 }
-            });
+              });
+            }
             this._frame++;
         }, this._interval);
     }
