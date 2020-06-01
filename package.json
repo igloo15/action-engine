@@ -1,7 +1,7 @@
 {
   "name": "@igloo15/action-engine",
   "oldVersion": "0.2.0-dev.7",
-  "version": "0.2.0-dev.1",
+  "version": "0.3.0-dev.3",
   "description": "Action Engine is synchronous action loop that can be hooked on to",
   "main": "dist/lib/index.js",
   "scripts": {
@@ -72,6 +72,6 @@
   },
   "readme": "ERROR: No README data found!",
   "_id": "@igloo15/action-engine@0.2.0-dev.7",
-  "date": "Sat May 30 2020",
+  "date": "Sun May 31 2020",
   "dependencies": {}
 }
