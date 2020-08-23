@@ -3,7 +3,7 @@ import { ActionEngine } from "./action-engine";
 
 console.log("Hello World");
 
-const actionEngine = new ActionEngine(23, 1000);
+const actionEngine = new ActionEngine(23);
 
 actionEngine.addAnimationAction((context, elapsed, frame) => {
   console.log(

@@ -1,7 +1,7 @@
 {
   "name": "@igloo15/action-engine",
   "oldVersion": "0.2.0-dev.7",
-  "version": "0.3.0-dev.5",
+  "version": "0.3.0-dev.6",
   "description": "Action Engine is synchronous action loop that can be hooked on to",
   "main": "dist/index.js",
   "scripts": {
